@@ -11,7 +11,7 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import AllPost from './pages/AllPost.jsx'
 import AddPost from './pages/AddPost.jsx'
-import Editpost from './pages/EditPost.jsx'
+import Editpost from './pages/Editpost.jsx'
 import Post from './pages/Post.jsx'
 
 
