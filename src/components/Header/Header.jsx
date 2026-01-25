@@ -23,7 +23,7 @@ function Header() {
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav className="hidden md:flex items-center gap-40">
+            <nav className="hidden md:flex items-center gap-30">
               {authStatus && (
                 <button
                 onClick={() => navigate("/")}
