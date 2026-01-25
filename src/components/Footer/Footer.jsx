@@ -20,7 +20,7 @@ function Footer() {
                 </span>
               </div>
 
-              <p className="text-sm text-gray-400 leading-relaxed mb-12">
+              <p className="text-sm text-gray-400 leading-relaxed mb-5">
                 A modern blogging platform to create, publish, and explore articles with ease.
               </p>
 

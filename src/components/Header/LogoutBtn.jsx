@@ -16,7 +16,9 @@ function LogoutBtn() {
     <button
       onClick={logoutHandler}
       className="inline-flex items-center justify-center
-         hover:text-red-700
+          text-red-700 p-2 rounded-2xl
+          transition-shadow duration-300
+          hover:shadow-[0_10px_25px_rgba(239,68,68,0.4)]
          "
     >
     Logout

@@ -24,12 +24,14 @@ function Header() {
 
             {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center gap-40">
-              <button
+              {authStatus && (
+                <button
                 onClick={() => navigate("/")}
                 className="text-sm font-medium text-slate-700 hover:text-indigo-600 transition"
               >
                 Home
               </button>
+              )}
 
               {authStatus && (
                 <button
@@ -63,8 +65,11 @@ function Header() {
                   <button
                     onClick={() => navigate("/signup")}
                     className="inline-flex items-center justify-center
-                    p-8
-                    hover:text-blue-700
+                    p-2 rounded-2xl
+                    text-blue-700
+                    transition-shadow duration-300
+                    
+                    hover:shadow-[0_10px_25px_rgba(59,130,246,0.4)]
                     "
                   >
                     Sign Up

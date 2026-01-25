@@ -5,6 +5,7 @@ import {Button, Input, Logo} from "./index"
 import {useDispatch} from "react-redux"
 import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
+import { motion } from "framer-motion"
 
 function Login() {
     const navigate = useNavigate()
@@ -27,7 +28,14 @@ function Login() {
     }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      className="flex items-center justify-center w-full"
+    >
+      <div
     className='flex items-center justify-center w-full '
     >
         <div className="mx-auto w-full max-w-lg  rounded-xl
@@ -83,6 +91,8 @@ function Login() {
         </form>
         </div>
     </div>
+    </motion.div>
+    
   )
 }
 
