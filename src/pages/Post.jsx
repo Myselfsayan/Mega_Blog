@@ -11,7 +11,6 @@ export default function Post() {
     const navigate = useNavigate();
 
     const userData = useSelector((state) => state.auth.userData);
-
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
     useEffect(() => {
@@ -33,34 +32,45 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-10">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                {/* Featured Image */}
+                <div className="relative mb-8 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
                     <img
                         src={service.getFileView(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="w-full max-h-[420px] object-cover"
                     />
 
                     {isAuthor && (
-                        <div className="absolute right-6 top-6">
+                        <div className="absolute right-4 top-4 flex gap-2">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button bgColor="bg-green-600" className="w-20">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
+                            <Button bgColor="bg-red-600" className="w-20" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
-                </div>
-                <div className="browser-css">
+
+                {/* Title */}
+                <h1 className="mb-6 text-3xl font-bold text-slate-900 dark:text-slate-100">
+                    {post.title}
+                </h1>
+
+                {/* Content */}
+                <div
+                    className="
+                        prose prose-slate max-w-none
+                        dark:prose-invert
+                        prose-img:rounded-xl
+                    "
+                >
                     {parse(post.content)}
-                    </div>
+                </div>
             </Container>
         </div>
     ) : null;
