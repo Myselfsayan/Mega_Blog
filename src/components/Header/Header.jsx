@@ -65,8 +65,7 @@ function Header() {
                     className="inline-flex items-center justify-center
                     p-8
                     hover:text-blue-700
-                    hover:shadow-md
-                    active:scale-95"
+                    "
                   >
                     Sign Up
                   </button>

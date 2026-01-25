@@ -28,10 +28,9 @@ const Input = React.forwardRef(function Input(
         type={type}
         className={`
           w-full
-          rounded-lg
+          rounded-sm
           border border-gray-300
           bg-white
-          px-4 py-2.5
           text-black
           outline-none
           transition-all duration-200
