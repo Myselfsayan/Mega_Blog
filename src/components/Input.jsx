@@ -27,7 +27,7 @@ const Input = React.forwardRef(function Input(
         ref={ref}
         type={type}
         className={`
-          w-[40vh]
+          w-70
           md:w-full
           rounded-sm
           border border-gray-300
